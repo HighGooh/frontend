@@ -5,6 +5,12 @@ import { fileURLToPath, URL } from 'url'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/",
+  server: {
+    host: '0.0.0.0',
+    port: 80,
+    allowedHosts: ['localhost', 'aiedu.tplinkdns.com'],
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
